@@ -1,4 +1,4 @@
 *.csv
-.DS_store
+.DS_Store
 *.txt
 !file5.txt
