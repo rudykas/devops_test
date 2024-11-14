@@ -10,7 +10,7 @@ words = ['test', 'cat', 'dog', 'lamp']
 # game 
 ## the task 
 
-word = words[random.randint(0,len(words))]
+word = words[random.randint(0,len(words)-1)]
 
 length = len(word)
 hidden_word = '_ '*length
@@ -19,7 +19,7 @@ print(hidden_word + ' your turn: ')
 
 ## input 
 
-letter = input()
+letter = input('Guess letter: ')
 
 def open_letter(letter, word): 
     pass
@@ -30,5 +30,8 @@ else:
     draw_next()
 
 # drawing 
+
+def draw_next():
+    pass
 
 # end
