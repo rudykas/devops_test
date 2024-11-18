@@ -1,4 +1,4 @@
-#imports
+# imports
 import random
 import numpy as np
 
@@ -33,8 +33,27 @@ def open_letter(letter, word, shown_word):
     print(shown_word)
     return shown_word
 
-def draw_next():
-    pass
+
+
+def draw_next(state):
+    hangman = '''
+    —
+      I 
+      O
+     /I\
+     
+     ll
+    '''
+    count = 0
+    for i in range(len(hangman)):
+        if hangman[i] == ' ' or hangman[i] == '\n':
+            pass
+        elif count == state: break
+        else: 
+            count +=1
+            # print('i',i)
+    return hangman[:i]
+        
 
 state = 0
 while state < 8: 
@@ -42,17 +61,15 @@ while state < 8:
         shown_word = open_letter(letter, word, shown_word)
         if '_' not in shown_word: print('Congrats! You won, word is', shown_word)
     else: 
-        draw_next()
+
         state += 1
         print('nope, you made ' + str(state) + ' errors')
+        print(draw_next(state))
     letter = input('Ok. Guess next letter: ')
     #todo add 
 
 print('Congrats! You lost')
 # drawing 
-
-#hangman 
-
 
 
 # end
