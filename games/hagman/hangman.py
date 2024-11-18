@@ -40,8 +40,7 @@ def draw_next(state):
     —
       I 
       O
-     /I\
-     
+     /I\\
      ll
     '''
     count = 0
