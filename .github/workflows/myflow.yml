@@ -1,10 +1,16 @@
-name: First Workflow  # name of workflow
-on: workflow_dispatch # event that triggers the execution, 'workflow_dispatch' is a manual trigger
+name: Code Style
+on:
+  push:
+    branches: 'main'
 jobs:
-  first-job: # name of job (can be customized)
-    runs-on: ubuntu-latest # runner e.g. execution environment (for example a GitHub-Hosted Runner)
+  code-style:
+    runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: echo "Hello World"
-      - name: Print goodbye
-        run: echo "Done - bye"
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install pylint and mypy
+        run: pip install pylint mypy
+      - name: Run pylint
+        run: python3 -m pylint .
+      - name: Run mypy
+        run: python3 -m mypy .
