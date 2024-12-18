@@ -33,7 +33,6 @@ def open_letter(letter, word, shown_word):
     print(shown_word)
     return shown_word
 
-def draw_next():
     pass
 
 state = 0
@@ -42,7 +41,6 @@ while state < 8:
         shown_word = open_letter(letter, word, shown_word)
         if '_' not in shown_word: print('Congrats! You won, word is', shown_word)
     else: 
-        draw_next()
         state += 1
         print('nope, you made ' + str(state) + ' errors')
     letter = input('Ok. Guess next letter: ')
@@ -50,9 +48,6 @@ while state < 8:
 
 print('Congrats! You lost')
 # drawing 
-
-#hangman 
-
 
 
 # end
